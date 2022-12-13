@@ -8,7 +8,8 @@ export default function Login() {
 
     const submitForm = () => {
         http.post('./login',{email:email,password:password}).then((res)=>{
-            setToken(res.data.user,res.data.access_token);
+            console.log(res.data);
+            setToken(res.data.user, res.data.authorization.token);
         })
     }
 
@@ -20,7 +21,7 @@ export default function Login() {
                         <label>Email:</label>
                         <input type="email" className="form-control" placeholder="Enter email"
                             onChange={e => setEmail(e.target.value)}
-                            id="email" />
+                                  id="email" />
                     </div>
                     <div className="form-group mt-3">
                         <label>Password:</label>
@@ -28,7 +29,7 @@ export default function Login() {
                             onChange={e => setPassword(e.target.value)}
                             id="pwd" />
                     </div>
-                    <button type="button" onClick={submitForm} className="btn btn-primary mt-4">Login</button>
+                    <button type="submit" onClick={submitForm} className="btn btn-primary mt-4">Login</button>
                 </div>
             </div>
         </div>

@@ -15,7 +15,6 @@ function Auth() {
 
     return (
         <div>
-            <link ></link>
             <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
                 <ul className="navbar-nav">
                     <li className="nav-item">
@@ -33,6 +32,7 @@ function Auth() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Dashboard />} />
+                    <Route path="/register" element={<Register />} />
                 </Routes>
             </div>
         </div>

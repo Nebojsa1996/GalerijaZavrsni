@@ -9,8 +9,8 @@ export default function AuthUser() {
     const getToken = () => 
     {
         const tokenSring = sessionStorage.getItem('token');
-        const userToken = JSON.parse(tokenSring);
-        return userToken;
+        // const userToken = JSON.parse(tokenSring);
+        // return userToken;
     }
 
 
@@ -46,7 +46,8 @@ export default function AuthUser() {
     const http = axios.create({
         baseURL: "http://localhost:8000/api",
         headers: {
-            "Content-type": "application/json"
+            "Content-type": "application/json",
+            "Authorization": `Bearer ${token}`
         }
     });
     return {
